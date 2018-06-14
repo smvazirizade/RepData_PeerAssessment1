@@ -44,8 +44,10 @@ ggplot(data=total_day, aes(x=date, y=total_steps)  )  +   geom_bar(stat="identit
   geom_hline(yintercept = mean(total_day$total_steps)  , color="red") +
   annotate("text", x = as.Date(min(total_day$date)), y = median(total_day$total_steps)+500 ,label = "Median", color="blue") +
   annotate("text", x = as.Date(min(total_day$date)), y = mean(total_day$total_steps)+500 ,label = "Mean", color="red")   
-```
+```  
+
 Then we draw the Histogram  
+
 ```{r}
  ggplot(data=total_day, aes(total_steps)  )  +  geom_histogram() + labs(x = "total steps per day") +
  geom_vline(xintercept = mean(total_day$total_steps), color="blue")  
